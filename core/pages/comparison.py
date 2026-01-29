@@ -315,7 +315,7 @@ def render_comparison_page(f: pd.DataFrame, discipline_sel: list[str]) -> None:
                         },
                     ]
 
-                    st.dataframe(pd.DataFrame(stats_rows), width="stretch")
+                    st.dataframe(pd.DataFrame(stats_rows), width="stretch", hide_index=True)
                     st.markdown("---")
 
     # =========================
@@ -419,7 +419,7 @@ def render_comparison_page(f: pd.DataFrame, discipline_sel: list[str]) -> None:
                     if recent_df.empty:
                         st.info("Aucun résultat exploitable.")
                     else:
-                        st.dataframe(recent_df, width="stretch")
+                        st.dataframe(recent_df, width="stretch", hide_index=True)
 
 
     # =========================
@@ -480,4 +480,4 @@ def render_comparison_page(f: pd.DataFrame, discipline_sel: list[str]) -> None:
                 if top_df.empty:
                     st.info("Aucun résultat exploitable.")
                 else:
-                    st.dataframe(top_df, width="stretch")
+                    st.dataframe(top_df, width="stretch", hide_index=True)
